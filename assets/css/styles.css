@@ -1,0 +1,56 @@
+.page-header.navbar.navbar-fixed-top, .page-header.navbar.navbar-static-top {
+    z-index:12;
+}
+
+.space-1 {
+    margin-top:5px;
+}
+
+.space-2 {
+    margin-top:10px;
+}
+
+.space-3 {
+    margin-top:15;
+}
+
+.space-4 {
+    margin-top:20px;
+}
+
+.space-5 {
+    margin-top:25px;
+}
+
+.form-control.required {
+    background: #fbec88 !important;
+    border: 1px solid #fad42e !important;
+    color: #363636 !important;
+    font-size: 14px !important;
+    padding: 6px 12px !important;
+}
+
+.home {
+    background:#ab002a;
+    color:#ffffff;
+}
+
+.green {
+    color:#237119;
+}
+
+.red {
+    color:#DC1515;
+}
+
+.jqx-fill-state-normal {
+    border: 1px solid #aaa;
+}
+
+.white {
+    color:#ffffff;
+}
+
+.btn {
+    vertical-align:top !important;
+}

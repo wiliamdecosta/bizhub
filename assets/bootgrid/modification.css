@@ -1,0 +1,43 @@
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+.table {
+    font-size:12px;
+}
+
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td
+{
+    padding:5px;
+}
+
+.pagination {
+    font-size: 11px;
+}
+
+.bootgrid-header .actionBar, .bootgrid-footer .infoBar {
+    font-size: 11px;
+    text-align: right;
+    font-weight:bold;
+}
+
+.required, .required:focus {
+    /*background-color: #ffffaa !important;
+    border-color: #fee188;*/
+    background-color: #b9daf0 !important;    
+}
+
+.required {
+    /*color: #996633 !important;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important;*/
+    
+    color: #494949 !important;
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.btn-group .btn {
+    font-size:12px;
+    line-height:2 !important;    
+}
