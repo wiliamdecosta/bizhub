@@ -76,7 +76,7 @@ class Production_controller {
 
         return $data;
     }
-    
+
     function readLov() {
         permission_check('view-tracking');
 
@@ -114,7 +114,7 @@ class Production_controller {
 
         return $data;
     }
-    
+
      function readLov_sortir() {
         permission_check('view-tracking');
 
@@ -133,10 +133,10 @@ class Production_controller {
             $ci = & get_instance();
             $ci->load->model('agripro/production');
             $table = $ci->production;
-            
-            $table->setCriteria(" production_qty is not null 
-                                    AND production_id not in (select distinct production_id 
-                                                                        from sortir 
+
+            $table->setCriteria(" production_qty is not null
+                                    AND production_id not in (select distinct production_id
+                                                                        from sortir
                                                                             where production_id is not null) ");
             if(!empty($searchPhrase)) {
                 $table->setCriteria(" (production_id ilike '%".$searchPhrase."%' or production_code ilike '%".$searchPhrase."%')");
@@ -487,7 +487,7 @@ class Production_controller {
          */
         $product_id = getVarClean('product_id','int',0);
         $product_date = getVarClean('tgl','str',0);
-        $userdata = $ci->ion_auth->user()->row();
+        $userdata = $ci->session->userdata;
 
         /**
          * Data details
@@ -513,7 +513,7 @@ class Production_controller {
             $table->db->trans_begin(); //Begin Trans
             $items = array(
                 'product_id' => $product_id,
-                'warehouse_id' => $userdata->wh_id,
+                'warehouse_id' => $userdata['wh_id'],
                 'production_qty' => $product_qty,
                 'production_qty_init' => $product_qty,
                 'production_code' => ' ',

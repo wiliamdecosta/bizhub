@@ -78,7 +78,7 @@ class Production_bizhub_controller {
 
         return $data;
     }
-    
+
     function readLov() {
         permission_check('view-tracking');
 
@@ -116,7 +116,7 @@ class Production_bizhub_controller {
 
         return $data;
     }
-    
+
      function readLov_sortir() {
         permission_check('view-tracking');
 
@@ -135,9 +135,9 @@ class Production_bizhub_controller {
             $ci = & get_instance();
             $ci->load->model('agripro/production_bizhub');
             $table = $ci->production_bizhub;
-            
-            $table->setCriteria(" production_bizhub_qty is not null 
-                                    AND production_bizhub_id not in (select distinct production_bizhub_id 
+
+            $table->setCriteria(" production_bizhub_qty is not null
+                                    AND production_bizhub_id not in (select distinct production_bizhub_id
                                                                         from sortir_bizhub
                                                                             where production_bizhub_id is not null) ");
             if(!empty($searchPhrase)) {
@@ -490,7 +490,7 @@ class Production_bizhub_controller {
          */
         $product_id = getVarClean('product_id','int',0);
         $product_date = getVarClean('tgl','str',0);
-        $userdata = $ci->ion_auth->user()->row();
+        $userdata = $ci->session->userdata;
 
         /**
          * Data details
@@ -516,7 +516,7 @@ class Production_bizhub_controller {
             $table->db->trans_begin(); //Begin Trans
             $items = array(
                 'product_id' => $product_id,
-                'warehouse_id' => $userdata->wh_id,
+                'warehouse_id' => $userdata['wh_id'],
                 'production_bizhub_qty' => $product_qty,
                 'production_bizhub_qty_init' => $product_qty,
                 'production_bizhub_code' => ' ',

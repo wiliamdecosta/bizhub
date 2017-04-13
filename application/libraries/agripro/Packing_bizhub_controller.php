@@ -157,7 +157,7 @@ class Packing_bizhub_controller {
             $ci->load->model('agripro/packing_bizhub');
             $table = $ci->packing_bizhub;
 
-            $userdata = $ci->ion_auth->user()->row();
+            $userdata = $ci->session->userdata;
              $table->setCriteria('pack.packing_bizhub_id NOT IN (select packing_bizhub_id from shipping_bizhub_detail)');
 
             $table->setCriteria('pack.warehouse_id = 999');
@@ -418,7 +418,7 @@ class Packing_bizhub_controller {
         $packing_bizhub_kg = getVarClean('packing_bizhub_kg','float',0);
         $packing_bizhub_date = getVarClean('packing_bizhub_date','str','');
         $product_id = getVarClean('product_id','int',0);
-        $userdata = $ci->ion_auth->user()->row();
+        $userdata = $ci->session->userdata;
 
         /**
          * Data details
